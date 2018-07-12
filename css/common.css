@@ -1,0 +1,98 @@
+@charset "utf-8";
+/* 基本設定 */
+
+* {
+	margin : 0 ;
+	padding : 0 ;
+}
+
+body {
+	font-size : 13px ;
+	line-height : 1 ;
+}
+
+.center {
+	text-align : center ;
+	margin : 0 auto ;
+}
+
+img {
+	border-style : none ;
+	vertical-align: bottom ;
+}
+
+.strong {
+	font-weight : bold ;
+}
+
+pre {
+	overflow: auto;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+.left {
+	float : left ;
+}
+
+.right {
+	float : right ; 
+}
+
+a:hover {
+	opacity : 0.7 ;
+}
+
+li {
+	list-style-type: none ;
+}
+
+.cf:after {
+    content: " ";
+    display: table;
+}
+
+.cf:after {
+    clear: both;
+}
+
+.cf {
+    *zoom: 1;
+}
+
+.pager  {
+	text-align : right ;
+	padding : 20px ;
+}
+
+.pager a {
+	text-decoration : none ;
+	color : #222 ;
+}
+
+.pager li {
+	display : inline ;
+	border : 1px #ccc solid ;
+	padding : 10px ;
+}
+
+.last {
+	border: none !important ;
+}
+
+input[type=text] {
+	padding : 10px ;
+	border-radius : 4px ;
+}
+
+input[type=submit] {
+	font-weight : bold ;
+	padding : 10px 20px ;
+	border-radius : 4px ;
+	cursor : pointer ;
+}
+
+input[type=submit]:hover {
+	opacity: 0.6;
+	filter: alpha(opacity=60);
+}
