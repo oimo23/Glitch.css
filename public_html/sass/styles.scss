@@ -1,0 +1,165 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css?family=Montserrat:100');
+@import url('https://fonts.googleapis.com/css?family=Play');
+
+/*--------------------------------------------------
+	初期化、基本設定
+---------------------------------------------------*/
+* {
+	margin : 0 ;
+	padding : 0 ;
+	box-sizing: border-box;
+}
+
+body {
+	font-size : 16px ;
+	font-family: 'Play', sans-serif;
+	line-height : 1.7 ;
+	color : #444;
+}
+
+.center {
+	text-align : center ;
+	margin : 0 auto ;
+}
+
+img {
+	border-style : none ;
+	vertical-align: bottom ;
+	max-width: 100% ;
+}
+
+.strong {
+	font-weight : bold ;
+}
+
+pre {
+	overflow: auto;
+	white-space: pre-wrap;
+	word-wrap: break-word;
+}
+
+.red {
+	color : red ;
+}
+
+.left {
+	float : left ;
+}
+
+.right {
+	float : right ; 
+}
+
+
+li {
+	list-style-type: none ;
+}
+
+.cf:after {
+	content: " ";
+	display: table;
+}
+
+.cf:after {
+	clear: both;
+}
+
+.cf {
+	*zoom: 1;
+}
+
+.i_block {
+	text-align : center ;
+}
+
+.i_block li {
+	display : inline-block ;
+}
+
+.pager  {
+	text-align : center ;
+	padding : 20px ;
+	display: flex;
+	justify-content: center;
+}
+
+.pager a {
+	text-decoration : none ;
+	color : #222 ;
+}
+
+.pager li {
+	border : 1px #ccc solid ;
+	padding : 10px 15px ;
+	background : #fff;
+}
+
+.pager li a {
+	color : #468dc8;
+}
+
+.pager .now {
+	background : #468dc8;
+	color : #fff;
+}
+
+.last {
+	border: none !important ;
+}
+
+.align_right {
+	text-align: right;
+}
+
+.p10 {
+	padding : 10px ;
+}
+
+.m10 {
+	margin : 10px ;
+}
+
+.m10_0 {
+	margin : 10px 0 ;
+}
+
+.flex {
+	display: flex ;
+	justify-content : center;
+}
+
+input,
+select {
+	padding : 10px;
+	font-size: 16px;
+}
+
+select option {
+	padding : 10px;
+}
+
+.selector {
+	margin : 40px 0 20px 0;
+}
+
+.view {
+  position: relative;
+  margin-top: 20% !important;
+  font-size: 4rem;
+  color: #444;
+  font-family: 'Play', sans-serif;
+  font-weight: bold;
+  max-width: 95%;
+  left: 50%;
+  text-align: center;
+  transform: translateX(-50%);
+  display: inline-block;
+}
+
+
+@media screen and (max-width: 750px) {
+	.view {
+		font-size : 2rem;
+	}
+}

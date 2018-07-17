@@ -1,0 +1,589 @@
+@charset "UTF-8";
+.glitch {
+  position: relative;
+}
+
+.glitch > * {
+  text-align: inherit;
+  line-height: 1;
+}
+
+.glitch > *:before,
+.glitch > *:after {
+  text-align: inherit;
+  width: 100%;
+}
+
+/*--------------------------------------------------
+	グリッチ1
+---------------------------------------------------*/
+.gl-1 {
+  margin: 0;
+}
+
+.gl-1 > * {
+  margin: auto;
+  text-align: center;
+  animation: glitch-skew 5s infinite alternate;
+  animation-timing-function: step-end;
+}
+
+.gl-1 > *::before, .gl-1 > *::after {
+  content: attr(data-text);
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 0;
+  text-align: center;
+  filter: drop-shadow(0 0 transparent);
+  background-color: inherit;
+}
+
+.gl-1 > *::after {
+  animation: gl-1_animation 3.1s infinite alternate;
+  animation-timing-function: step-end;
+}
+
+@keyframes gl-1_animation {
+  0% {
+  }
+  5% {
+    transform: translateX(0.5%);
+    clip-path: inset(30% 0 60% 0);
+    -webkit-clip-path: inset(30% 0 60% 0);
+    text-shadow: -3px 0 .02em lime,  -6px 0 .02em #ff00e1;
+  }
+  10% {
+    clip-path: inset(100% 0 100% 0);
+    -webkit-clip-path: inset(100% 0 100% 0);
+  }
+  15% {
+    transform: translateX(0.5%);
+    clip-path: inset(30% 0 60% 0);
+    -webkit-clip-path: inset(30% 0 60% 0);
+  }
+  18% {
+    transform: translateX(1%);
+    clip-path: inset(30% 0 60% 0);
+    -webkit-clip-path: inset(30% 0 60% 0);
+  }
+  21% {
+    transform: translateX(0.5%);
+  }
+  24% {
+    transform: translateX(4%);
+    clip-path: inset(30% 0 60% 0);
+    -webkit-clip-path: inset(30% 0 60% 0);
+  }
+  27% {
+    transform: translateX(0.5%);
+  }
+  29% {
+    clip-path: inset(100% 0 100% 0);
+    -webkit-clip-path: inset(100% 0 100% 0);
+  }
+  40% {
+    transform: translateX(1%);
+    clip-path: inset(60% 0 25% 0);
+    -webkit-clip-path: inset(60% 0 25% 0);
+    text-shadow: -2px 0 .02em lime,  -5px 0 .02em #ff00e1;
+  }
+  42% {
+    clip-path: inset(100% 0 100% 0);
+    -webkit-clip-path: inset(100% 0 100% 0);
+  }
+  50% {
+    transform: translateX(3%);
+    clip-path: inset(25% 0 70% 0);
+    -webkit-clip-path: inset(25% 0 70% 0);
+  }
+  55% {
+    clip-path: inset(100% 0 100% 0);
+    -webkit-clip-path: inset(100% 0 100% 0);
+  }
+  80% {
+    transform: translateX(7%);
+    text-shadow: 2px 0 .02em lime,  -4px 0 .02em #ff00e1;
+    clip-path: inset(60% 0 25% 0);
+    -webkit-clip-path: inset(60% 0 25% 0);
+  }
+  83% {
+    clip-path: inset(100% 0 100% 0);
+    -webkit-clip-path: inset(100% 0 100% 0);
+  }
+  100% {
+    clip-path: inset(100% 0 0 0);
+    -webkit-clip-path: inset(100% 0 0 0);
+  }
+}
+
+/*--------------------------------------------------
+	グリッチ2
+---------------------------------------------------*/
+.gl-2 > *:before,
+.gl-2 > *:after {
+  content: attr(data-text);
+  opacity: 0.8;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.gl-2 > *:before {
+  color: #ff00e1;
+  z-index: -1;
+  animation: gl-2_animation 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both infinite;
+}
+
+.gl-2 > *:after {
+  color: lime;
+  z-index: -2;
+  animation: gl-2_animation 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) reverse both infinite;
+}
+
+@keyframes gl-2_animation {
+  0% {
+    -webkit-transform: translate(0);
+    transform: translate(0);
+  }
+  20% {
+    -webkit-transform: translate(-3px, 0px);
+    transform: translate(-3px, 0px);
+    transform: skewX(10deg);
+  }
+  40% {
+    -webkit-transform: translate(-3px, 0px);
+    transform: translate(-3px, 0px);
+  }
+  60% {
+    -webkit-transform: translate(3px, 0px);
+    transform: translate(3px, 0px);
+  }
+  80% {
+    -webkit-transform: translate(3px, 0px);
+    transform: translate(3px, 0px);
+  }
+  to {
+    -webkit-transform: translate(0);
+    transform: translate(0);
+  }
+}
+
+/*--------------------------------------------------
+	グリッチ3
+---------------------------------------------------*/
+.gl-3 > * {
+  animation: glitch-anim2 1s infinite alternate;
+}
+
+.gl-3 > *:before,
+.gl-3 > *:after {
+  content: attr(data-text);
+  opacity: 1;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.gl-3 > *:before {
+  left: -2px;
+  overflow: hidden;
+  animation: gl-3_animation 5s infinite alternate;
+  z-index: -1;
+  -webkit-clip-path: inset(0 0 60% 0);
+  clip-path: inset(0 0 60% 0);
+}
+
+.gl-3 > *:after {
+  left: 2px;
+  overflow: hidden;
+  animation: gl-3_animation2 5s infinite alternate;
+  z-index: -2;
+  -webkit-clip-path: inset(40% 0 0 0);
+  clip-path: inset(40% 0 0 0);
+}
+
+@keyframes gl-3_animation {
+  0% {
+    -webkit-clip-path: inset(0 0 90% 0);
+    clip-path: inset(0 0 90% 0);
+  }
+  29% {
+    -webkit-clip-path: inset(0 0 90% 0);
+    clip-path: inset(0 0 90% 0);
+  }
+  30% {
+    -webkit-clip-path: inset(0 0 70% 0);
+    clip-path: inset(0 0 70% 0);
+  }
+  60% {
+    -webkit-clip-path: inset(0 0 40% 0);
+    clip-path: inset(0 0 40% 0);
+  }
+  80% {
+    -webkit-clip-path: inset(0 0 45% 0);
+    clip-path: inset(0 0 45% 0);
+  }
+  to {
+    -webkit-clip-path: inset(0 0 15% 0);
+    clip-path: inset(0 0 15% 0);
+  }
+}
+
+@keyframes gl-3_animation2 {
+  0% {
+    -webkit-clip-path: inset(10% 0 0 0);
+    clip-path: inset(10% 0 0 0);
+  }
+  29% {
+    -webkit-clip-path: inset(10% 0 0 0);
+    clip-path: inset(10% 0 0 0);
+  }
+  30% {
+    -webkit-clip-path: inset(30% 0 0 0);
+    clip-path: inset(30% 0 0 0);
+  }
+  60% {
+    -webkit-clip-path: inset(60% 0 0 0);
+    clip-path: inset(60% 0 0 0);
+  }
+  80% {
+    -webkit-clip-path: inset(55% 0 0 0);
+    clip-path: inset(55% 0 0 0);
+  }
+  to {
+    -webkit-clip-path: inset(85% 0 0 0);
+    clip-path: inset(85% 0 0 0);
+  }
+}
+
+/*--------------------------------------------------
+	グリッチ4
+---------------------------------------------------*/
+.gl-4 > * {
+  animation: glitch-skew_subtle .3s infinite alternate;
+}
+
+.gl-4 > *:before,
+.gl-4 > *:after {
+  content: attr(data-text);
+  opacity: 1;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.gl-4 > *:before {
+  left: -2px;
+  overflow: hidden;
+  animation: gl-4_animation 2s infinite alternate;
+  z-index: -1;
+  transform: scaleX(1.2);
+  animation-timing-function: step-end;
+  text-shadow: -4px 0 .02em lime,  -8px 0 .02em #ff00e1;
+}
+
+.gl-4 > *:after {
+  left: 2px;
+  animation: gl-4_animation2 7s infinite;
+  z-index: -2;
+  opacity: 1;
+  text-shadow: -4px 0 .02em lime,  -8px 0 .02em #ff00e1;
+  transform: scaleX(1.5);
+  -webkit-clip-path: inset(20% 0 78% 0);
+  clip-path: inset(20% 0 78% 0);
+}
+
+@keyframes gl-4_animation {
+  3%, 33%, 36%, 63%, 81%, 84% {
+    -webkit-clip-path: inset(100% 0 0 0);
+    clip-path: inset(100% 0 0 0);
+  }
+  0% {
+    -webkit-clip-path: inset(10% 0 80% 0);
+    clip-path: inset(10% 0 80% 0);
+    transform: scaleX(1.1);
+  }
+  30% {
+    -webkit-clip-path: inset(30% 0 60% 0);
+    clip-path: inset(30% 0 60% 0);
+    transform: scaleX(0.5);
+  }
+  35% {
+    -webkit-clip-path: inset(30% 0 60% 0);
+    clip-path: inset(30% 0 60% 0);
+    transform: scaleX(0.5);
+  }
+  60% {
+    -webkit-clip-path: inset(60% 0 30% 0);
+    clip-path: inset(60% 0 30% 0);
+    transform: scaleX(1.5);
+  }
+  80% {
+    -webkit-clip-path: inset(55% 0 30% 0);
+    clip-path: inset(55% 0 30% 0);
+  }
+  83% {
+    -webkit-clip-path: inset(55% 0 10% 0);
+    clip-path: inset(55% 0 10% 0);
+    transform: scaleY(1.1);
+  }
+  to {
+    -webkit-clip-path: inset(85% 0 0 0);
+    clip-path: inset(85% 0 0 0);
+  }
+}
+
+@keyframes gl-4_animation2 {
+  0% {
+    -webkit-clip-path: inset(20% 0 82% 0);
+    clip-path: inset(20% 0 82% 0);
+  }
+  39% {
+    -webkit-clip-path: inset(20% 0 82% 0);
+    clip-path: inset(20% 0 82% 0);
+  }
+  40% {
+    -webkit-clip-path: inset(20% 0 78% 0);
+    clip-path: inset(20% 0 78% 0);
+  }
+  to {
+    -webkit-clip-path: inset(96% 0 2% 0);
+    clip-path: inset(96% 0 2% 0);
+  }
+}
+
+/*--------------------------------------------------
+	グリッチ5
+---------------------------------------------------*/
+.gl-5 > *:before,
+.gl-5 > *:after {
+  content: attr(data-text);
+  opacity: 1;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.gl-5 > *:before {
+  left: -4px;
+  overflow: hidden;
+  animation: gl-4_animation 2s infinite alternate-reverse;
+  z-index: -1;
+  transform: scaleX(1.2);
+  animation-timing-function: step-end;
+  text-shadow: -4px 0 .02em lime,  -8px 0 .02em #ff00e1;
+}
+
+.gl-5 > *:after {
+  left: 5px;
+  z-index: -2;
+  opacity: 1;
+  text-shadow: -4px 0 .02em lime,  -8px 0 .02em #ff00e1;
+  transform: scaleX(1.5);
+}
+
+/*--------------------------------------------------
+	グリッチ6
+---------------------------------------------------*/
+.gl-6 > * {
+  animation: glitch-skew_subtle .3s infinite alternate;
+}
+
+.gl-6 > *:before,
+.gl-6 > *:after {
+  content: attr(data-text);
+  opacity: 1;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.gl-6 > *:before {
+  left: -2px;
+  overflow: hidden;
+  animation: gl-4_animation 1s infinite alternate;
+  z-index: -1;
+  animation-timing-function: step-end;
+  text-shadow: -4px 0 .02em lime,  -8px 0 .02em #ff00e1;
+}
+
+.gl-6 > *:after {
+  left: 2px;
+  animation: glitch-anim2 7s infinite;
+  z-index: -2;
+  opacity: 1;
+  text-shadow: -4px 0 .02em lime,  -8px 0 .02em #ff00e1;
+  -webkit-clip-path: inset(20% 0 78% 0);
+  clip-path: inset(20% 0 78% 0);
+}
+
+@keyframes glitch-anim2 {
+  0% {
+    clip: rect(39px, 9999px, 68px, 0);
+    transform: skew(0.9deg);
+  }
+  5% {
+    clip: rect(99px, 9999px, 14px, 0);
+    transform: skew(0.51deg);
+  }
+  10% {
+    clip: rect(48px, 9999px, 51px, 0);
+    transform: skew(0.15deg);
+  }
+  15% {
+    clip: rect(82px, 9999px, 10px, 0);
+    transform: skew(0.94deg);
+  }
+  20% {
+    clip: rect(57px, 9999px, 33px, 0);
+    transform: skew(0.62deg);
+  }
+  25% {
+    clip: rect(27px, 9999px, 92px, 0);
+    transform: skew(0.55deg);
+  }
+  30% {
+    clip: rect(87px, 9999px, 76px, 0);
+    transform: skew(0.55deg);
+  }
+  35% {
+    clip: rect(53px, 9999px, 6px, 0);
+    transform: skew(0.65deg);
+  }
+  40% {
+    clip: rect(84px, 9999px, 25px, 0);
+    transform: skew(0.38deg);
+  }
+  45% {
+    clip: rect(9px, 9999px, 70px, 0);
+    transform: skew(0.72deg);
+  }
+  50% {
+    clip: rect(11px, 9999px, 11px, 0);
+    transform: skew(0.19deg);
+  }
+  55% {
+    clip: rect(85px, 9999px, 33px, 0);
+    transform: skew(0.92deg);
+  }
+  60% {
+    clip: rect(34px, 9999px, 57px, 0);
+    transform: skew(0.77deg);
+  }
+  65% {
+    clip: rect(10px, 9999px, 35px, 0);
+    transform: skew(0.55deg);
+  }
+  70% {
+    clip: rect(46px, 9999px, 87px, 0);
+    transform: skew(0.46deg);
+  }
+  75% {
+    clip: rect(72px, 9999px, 28px, 0);
+    transform: skew(0.18deg);
+  }
+  80% {
+    clip: rect(21px, 9999px, 51px, 0);
+    transform: skew(0.27deg);
+  }
+  85% {
+    clip: rect(5px, 9999px, 2px, 0);
+    transform: skew(0.78deg);
+  }
+  90% {
+    clip: rect(22px, 9999px, 48px, 0);
+    transform: skew(0.26deg);
+  }
+  95% {
+    clip: rect(38px, 9999px, 5px, 0);
+    transform: skew(0.79deg);
+  }
+  100% {
+    clip: rect(44px, 9999px, 40px, 0);
+    transform: skew(0.1deg);
+  }
+}
+
+@keyframes glitch-skew {
+  0% {
+    transform: skew(5deg);
+  }
+  10% {
+    transform: skew(-1deg);
+  }
+  20% {
+    transform: skew(3deg);
+  }
+  30% {
+    transform: skew(3deg);
+  }
+  40% {
+    transform: skew(-4deg);
+  }
+  50% {
+    transform: skew(5deg);
+  }
+  60% {
+    transform: skew(-1deg);
+  }
+  70% {
+    transform: skew(5deg);
+  }
+  80% {
+    transform: skew(-2deg);
+  }
+  90% {
+    transform: skew(0deg);
+  }
+  100% {
+    transform: skew(4deg);
+  }
+}
+
+@keyframes glitch-skew_subtle {
+  0% {
+    transform: skew(0deg);
+  }
+  10% {
+    transform: skew(-1deg);
+  }
+  20% {
+    transform: skew(-2deg);
+  }
+  30% {
+    transform: skew(-3deg);
+  }
+  40% {
+    transform: skew(-4deg);
+  }
+  50% {
+    transform: skew(0deg);
+  }
+  60% {
+    transform: skew(-1deg);
+  }
+  70% {
+    transform: skew(0deg);
+  }
+  80% {
+    transform: skew(-3deg);
+  }
+  90% {
+    transform: skew(-3deg);
+  }
+  100% {
+    transform: skew(-2deg);
+  }
+}
+
+@media all and (-ms-high-contrast: none) {
+  .glitch > *:before,
+  .glitch > *:after {
+    display: none;
+  }
+}
