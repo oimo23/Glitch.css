@@ -1,3 +1,5 @@
 public_html/node_modules
+public_html/package.json
 public_html/package-lock.json
 public_html/gulpfile.js
+README_standby.md
