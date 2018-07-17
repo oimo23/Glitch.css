@@ -1,0 +1,22 @@
+version: 2
+jobs:
+  build:
+    working_directory: ~/glitch
+    environment:
+      - AWS_S3_BUCKET_NAME: oimo-tools.com
+    docker:
+      - image: innovatorjapan/awscli:latest
+    steps:
+      - checkout
+      - run:
+          name: Deploy to Mainplace if branch is Master.
+          command: |
+            if [ "${CIRCLE_BRANCH}" == "master" ]; then
+              aws s3 sync ./public_html s3://oimo-tools.com/glitch/ --exact-timestamps --delete
+            fi
+      - run:
+          name: Deploy to Developplace if branch is Master.
+          command: |
+            if [ "${CIRCLE_BRANCH}" == "develop" ]; then
+              aws s3 sync ./public_html s3://oimo-tools.com/develop2/ --exact-timestamps --delete
+            fi
