@@ -33,7 +33,7 @@ And If you want to atatch gl-1 effect, add one more class "gl-1".
 	<p data-text="InputYourText">InputYourText</p>
 </div>
 
-## Browser soppurt
+## Browser sopport
 
 Almost of all modern browser without "IE/EDGE".
 When you using IE/EDGE browser, nothing happen.
