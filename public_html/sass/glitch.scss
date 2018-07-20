@@ -5,6 +5,7 @@
 .glitch > * {
 	text-align: inherit;
 	line-height: 1;
+	word-break: break-all;
 }
 
 .glitch > *:before,
@@ -376,7 +377,8 @@
 .gl-5 {
 
 	> * {
-		//animation: glitch-skew_subtle 3s infinite alternate;
+		animation: transform 2s steps(10) infinite, glitch 3.2s infinite;
+		animation-timing-function: step-end;
 		}
 
 	> *:before,
@@ -391,26 +393,69 @@
 
 	> *:before {
 		left : -4px;
-		overflow: hidden;
+		display: none;
 		animation: gl-4_animation 2s infinite alternate-reverse;
 		z-index: -1;
-		transform: scaleX(1.2);
 		animation-timing-function: step-end;
-		text-shadow: -4px 0 .02em lime, 
-				-8px 0 .02em #ff00e1;
+		transform : scaleX(1.5);
+		opacity: 0.5;
 	}
 
 	> *:after {
+		display: none;
 		left : 5px;
-		//animation: gl-2_animation .7s infinite;
+		animation: gl-5_animation2 .3s infinite;
+		animation-timing-function: step-end;
 		z-index: -2;
 		opacity: 1;
-		text-shadow: -4px 0 .02em lime, 
-				-8px 0 .02em #ff00e1;
-		transform : scaleX(1.5);
+		transform:scaleX(1.2);
 	}
 
 }
+
+@keyframes gl-5_animation {
+	0% {
+		transform:skew(0deg, 0deg);
+	}
+	40% {
+		transform:skew(1deg, 1deg);
+	}
+	to {
+		transform:skew(0deg, 0deg);
+	}
+}
+
+@keyframes gl-5_animation2 {
+	1%,21%,41%,61%,81% {
+		-webkit-clip-path: inset(100% 0 100% 0);
+		clip-path: inset(100% 0 100% 0);
+	}
+	0% {
+		-webkit-clip-path: inset(10% 0 56% 0);
+		clip-path: inset(10% 0 56% 0);
+	}
+	20% {
+		-webkit-clip-path: inset(20% 0 78% 0);
+		clip-path: inset(20% 0 78% 0);
+	}
+	40% {
+		-webkit-clip-path: inset(80% 0 19% 0);
+		clip-path: inset(80% 0 19% 0);
+	}
+	60% {
+		-webkit-clip-path: inset(50% 0 48% 0);
+		clip-path: inset(50% 0 48% 0);
+	}
+	80% {
+		-webkit-clip-path: inset(46% 0 10% 0);
+		clip-path: inset(46% 0 10% 0);
+	}
+	to {
+		-webkit-transform: translate(0);
+		transform: translate(0)
+	}
+}
+
 
 /*--------------------------------------------------
 	グリッチ6
@@ -456,7 +501,9 @@
 
 }
 
-
+/*--------------------------------------------------
+	汎用
+---------------------------------------------------*/
 @keyframes glitch-anim2 {
   $steps: 20;
   @for $i from 0 through $steps {
@@ -485,9 +532,58 @@
   }
 }
 
+@keyframes glitch {
+  45% {
+    filter: none;
+  }
+  46% {
+    filter: url(#dist-01);
+  }
+  47% {
+    filter: url(#dist-02);
+  }
+  48% {
+    filter: url(#dist-03);
+  }
+  50% {
+    filter: none;
+  }
+  95% {
+    filter: none;
+  }
+  96% {
+    filter:  url(#dist-02);
+  }
+  97% {
+    filter:  url(#dist-04);
+  }
+}
+
+@keyframes transform {
+  0% {
+    transform: translate(-5%, -5%) skew(-10deg) scale(1.05);
+  }
+  1% {
+    transform: none;
+  }
+  88% {
+    transform: none;
+  }
+  89% {
+    transform: translate(5%, 10%) scale(1.05);
+  }
+  90% {
+    transform: none;
+  }
+}
+
+/*--------------------------------------------------
+	IE/Edge hack
+---------------------------------------------------*/
 @media all and (-ms-high-contrast: none) {
 	.glitch > *:before,
 	.glitch > *:after {
 		display: none;
 	}
 }
+

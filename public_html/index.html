@@ -42,7 +42,8 @@ window.onload = function () {
 <div class="app">
 	<div class="view">
 		<div v-bind:class="selected" class="glitch">
-			<p v-bind:data-text="message">{{ message }}</p>
+			<p v-bind:data-text="message" v-if="message">{{ message }}</p>
+			<p data-text="GLITCH.CSS" v-else-if="message == ''">GLITCH.CSS</p>
 		</div>
 	</div>
 
@@ -55,6 +56,7 @@ window.onload = function () {
 		<option value="gl-2">gl-2</option>
 		<option value="gl-3">gl-3</option>
 		<option value="gl-4">gl-4</option>
+		<option value="gl-5">gl-5</option>
 	</select>
 </div>
 
