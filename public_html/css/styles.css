@@ -18,6 +18,7 @@ body {
   font-size: 16px;
   font-family: 'Play', sans-serif;
   line-height: 1.7;
+  max-width: 100%;
   color: #444;
 }
 
@@ -157,6 +158,47 @@ select option {
   text-align: center;
   transform: translateX(-50%);
   display: inline-block;
+}
+
+@keyframes gl-body_animation {
+  3%, 33%, 36%, 63%, 81%, 84% {
+    -webkit-clip-path: inset(100% 0 0 0);
+    clip-path: inset(100% 0 0 0);
+  }
+  0% {
+    -webkit-clip-path: inset(10% 0 10% 0);
+    clip-path: inset(10% 0 10% 0);
+    transform: scaleX(1.1);
+  }
+  30% {
+    -webkit-clip-path: inset(30% 0 10% 0);
+    clip-path: inset(30% 0 10% 0);
+    transform: scale(3, 3);
+  }
+  35% {
+    -webkit-clip-path: inset(30% 0 60% 0);
+    clip-path: inset(30% 0 60% 0);
+    transform: scaleX(0.5);
+  }
+  60% {
+    -webkit-clip-path: inset(10% 0 50% 0);
+    clip-path: inset(10% 0 50% 0);
+    transform: scale(10, 10);
+    top: 0;
+  }
+  80% {
+    -webkit-clip-path: inset(55% 0 30% 0);
+    clip-path: inset(55% 0 30% 0);
+  }
+  83% {
+    -webkit-clip-path: inset(55% 0 10% 0);
+    clip-path: inset(55% 0 10% 0);
+    transform: scaleY(1.1);
+  }
+  to {
+    -webkit-clip-path: inset(85% 0 0 0);
+    clip-path: inset(85% 0 0 0);
+  }
 }
 
 @media screen and (max-width: 750px) {
